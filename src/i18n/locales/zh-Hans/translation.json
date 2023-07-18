@@ -47,7 +47,7 @@
   "font size changed, effective after next launch": "字体大小已改变，将在下次启动时生效",
   "star": "星标",
   "unstar": "取消星标",
-  "About": "关于",
+  "About": "获取API KEY",
   "About Chatbox": "版本信息",
   "close": "关闭",
   "About Message": "Chatbox 是一个免费开源的 GPT 桌面客户端与调试工具，是你桌面上的最佳 AI 拍档。由 <0>{{Author}}</0> 与开源社区共同打造。",
