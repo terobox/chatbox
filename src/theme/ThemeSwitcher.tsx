@@ -33,7 +33,7 @@ export function ThemeSwitcherProvider(props: ThemeSwitcherProviderProps) {
     const [mode, setMode] = useState<ThemeMode>(getThemeModeFromLocal(THEME_MODE, ThemeMode.System));
     // `shouldUseDarkColors` becomes asynchronous after being called by tauri,
     // here need to use a useState to convert `shouldUseDarkColors` to synchronous
-    const [realMode, setRealMode] = useState<RealThemeMode>(getThemeModeFromLocal(REAL_THEME_MODE, ThemeMode.Dark));
+    const [realMode, setRealMode] = useState<RealThemeMode>(getThemeModeFromLocal(REAL_THEME_MODE, ThemeMode.Light));
 
     // "shouldUseDarkColors" is asynchronous, after calling "changeRealMode", "mode" may have changed (eg: System -> Dark),
     // then "shouldUseDarkColors" should not be used to determine "realMode"
