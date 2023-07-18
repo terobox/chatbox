@@ -10,7 +10,7 @@
     "test:react": "react-scripts test",
     "eject:react": "react-scripts eject",
     "dev": "tauri dev",
-    "build": "tauri build",
+    "build": "react-scripts build",
     "tauri": "tauri"
   },
   "repository": {
