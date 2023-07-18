@@ -19,9 +19,9 @@ export function getDefaultSettings(): Settings {
         maxTokens: "2048",
         showWordCount: false,
         showTokenCount: false,
-        showModelName: false,
+        showModelName: true,
         theme: ThemeMode.System,
-        language: 'en',
+        language: 'zh-Hans',
         fontSize: 13,
     }
 }
