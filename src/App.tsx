@@ -470,12 +470,7 @@ function Main() {
                                     </IconButton>
                                 </ListItemIcon>
                                 <ListItemText>
-                                    <Badge color="primary" variant="dot" invisible={!store.needCheckUpdate}
-                                    sx={{ paddingRight: '8px' }} >
-                                        <Typography sx={{ opacity: 0.5 }}>
-                                            {t('About')} ({store.version})
-                                        </Typography>
-                                    </Badge>
+                                    {t('About')}
                                 </ListItemText>
                             </MenuItem>
                         </MenuList>
