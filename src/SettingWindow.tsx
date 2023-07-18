@@ -124,22 +124,49 @@ export default function SettingWindow(props: Props) {
                     value={settingsEdit.openaiKey}
                     onChange={(e) => setSettingsEdit({ ...settingsEdit, openaiKey: e.target.value.trim() })}
                 />
-                <FormControl fullWidth variant="outlined" margin="dense">
-                    <InputLabel htmlFor="language-select">{t('language')}</InputLabel>
-                    <Select
-                        label="language"
-                        id="language-select"
-                        value={settingsEdit.language}
-                        onChange={(e) => {
-                            setSettingsEdit({ ...settingsEdit, language: e.target.value });
-                        }}>
-                        {languages.map((language) => (
-                            <MenuItem key={language} value={language}>
-                                {languageMap[language]}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
+                <TextField
+                        margin="dense"
+                        label={t('api host')}
+                        type="text"
+                        fullWidth
+                        variant="outlined"
+                        value={settingsEdit.apiHost}
+                        onChange={(e) => setSettingsEdit({ ...settingsEdit, apiHost: e.target.value.trim() })}
+                />
+                <Accordion>
+                    <AccordionSummary
+                        aria-controls="panel1a-content"
+                    >
+                        <Typography>{t('model')} & {t('token')} </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        
+                        <FormControl fullWidth variant="outlined" margin="dense">
+                            <InputLabel htmlFor="model-select">{t('model')}</InputLabel>
+                            <Select
+                                label="Model"
+                                id="model-select"
+                                value={settingsEdit.model}
+                                onChange={(e) => setSettingsEdit({ ...settingsEdit, model: e.target.value })}>
+                                {models.map((model) => (
+                                    <MenuItem key={model} value={model}>
+                                        {model}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+
+                        <FormGroup>
+                            <FormControlLabel control={<Switch />}
+                                label={t('show model name')}
+                                checked={settingsEdit.showModelName}
+                                onChange={(e, checked) => setSettingsEdit({ ...settingsEdit, showModelName: checked })}
+                            />
+                        </FormGroup>
+
+                    </AccordionDetails>
+                </Accordion>
+                
                 <FormControl sx={{ flexDirection: 'row', alignItems: 'center', paddingTop: 1, paddingBottom: 1 }}>
                     <span style={{ marginRight: 10 }}>{t('theme')}</span>
                     <ThemeChangeButton value={settingsEdit.theme} onChange={theme => changeModeWithPreview(theme)} />
@@ -176,56 +203,7 @@ export default function SettingWindow(props: Props) {
                         onChange={(e, checked) => setSettingsEdit({ ...settingsEdit, showTokenCount: checked })}
                     />
                 </FormGroup>
-                <Accordion>
-                    <AccordionSummary aria-controls="panel1a-content">
-                        <Typography>{t('proxy')}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <TextField
-                            margin="dense"
-                            label={t('api host')}
-                            type="text"
-                            fullWidth
-                            variant="outlined"
-                            value={settingsEdit.apiHost}
-                            onChange={(e) => setSettingsEdit({ ...settingsEdit, apiHost: e.target.value.trim() })}
-                        />
-
-                    </AccordionDetails>
-                </Accordion>
-                <Accordion>
-                    <AccordionSummary
-                        aria-controls="panel1a-content"
-                    >
-                        <Typography>{t('model')} & {t('token')} </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        
-                        <FormControl fullWidth variant="outlined" margin="dense">
-                            <InputLabel htmlFor="model-select">{t('model')}</InputLabel>
-                            <Select
-                                label="Model"
-                                id="model-select"
-                                value={settingsEdit.model}
-                                onChange={(e) => setSettingsEdit({ ...settingsEdit, model: e.target.value })}>
-                                {models.map((model) => (
-                                    <MenuItem key={model} value={model}>
-                                        {model}
-                                    </MenuItem>
-                                ))}
-                            </Select>
-                        </FormControl>
-
-                        <FormGroup>
-                            <FormControlLabel control={<Switch />}
-                                label={t('show model name')}
-                                checked={settingsEdit.showModelName}
-                                onChange={(e, checked) => setSettingsEdit({ ...settingsEdit, showModelName: checked })}
-                            />
-                        </FormGroup>
-
-                    </AccordionDetails>
-                </Accordion>
+                
             </DialogContent>
             <DialogActions>
                 <Button onClick={onCancel}>{t('cancel')}</Button>
