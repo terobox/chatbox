@@ -33,7 +33,7 @@ export default function AboutWindow(props: Props) {
                 <Box sx={{ textAlign: 'center', padding: '0 20px' }}>
                     <img src={iconPNG} style={{ width: '100px', margin: 0 }} />
                     <h3 style={{ margin: '4px 0 5px 0' }}>ChatCloud</h3>
-                    <h4 style={{ margin: '4px 0 5px 0' }}>专业稳定的 AI 对话系统</h3>
+                    <h4 style={{ margin: '4px 0 5px 0' }}>专业稳定的 AI 对话系统</h4>
                     <span>
                         <a href={`https://openkey.cloud/`} target='_blank'></a>
                     </span>
