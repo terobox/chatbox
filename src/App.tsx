@@ -375,7 +375,7 @@ function Main() {
                                 marginRight: '5px',
                             }} />
                             <Typography variant="h5" color="inherit" component="div" style={{fontSize: '26px'}}>
-                                Chatbox
+                                ChatCloud
                             </Typography>
                         </Toolbar>
 
