@@ -41,7 +41,17 @@ export default function AboutWindow(props: Props) {
                     <Button variant="outlined"
                         onClick={() => api.openLink(`https://openkey.cloud/`)}
                     >
-                        <a href={`https://openkey.cloud/`} target='_blank'>购买</a>
+                        <a href={`https://openkey.cloud/`} target='_blank' style={{ textDecoration: 'none', color: 'CC3539' }}>OpenKEY网址</a>
+                    </Button>
+                    <Button variant="outlined"
+                        onClick={() => api.openLink(`https://shop.terobox.com/`)}
+                    >
+                        <a href={`https://shop.terobox.com/`} target='_blank' style={{ textDecoration: 'none', color: 'CC3539' }}>购买地址1：Box小铺</a>
+                    </Button>
+                    <Button variant="outlined"
+                        onClick={() => api.openLink(`https://shop.51buygpt.com/`)}
+                    >
+                        <a href={`https://shop.51buygpt.com/`} target='_blank' style={{ textDecoration: 'none', color: '4FA586' }}>购买地址：51BuyGPT</a>
                     </Button>
                 </Stack>
 
