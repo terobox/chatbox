@@ -41,7 +41,7 @@ export default function AboutWindow(props: Props) {
                     <Button variant="outlined"
                         onClick={() => api.openLink(`https://openkey.cloud/`)}
                     >
-                        {t('购买')}
+                        <a href={`https://openkey.cloud/`} target='_blank'>购买</a>
                     </Button>
                 </Stack>
 
